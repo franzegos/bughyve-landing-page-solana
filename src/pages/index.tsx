@@ -5,8 +5,9 @@ import { cn } from "@/lib/utils/cn";
 import { Users } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { toast } from "sonner";
-import bughyveLogo from "@/assets/bughyve-logo-transparent.svg";
-import bughyveWordmark from "@/assets/bughyve-wordmark.jpeg";
+
+const BUGHYVE_LOGO_SRC = "/bughyve-logo-transparent.svg";
+const BUGHYVE_WORDMARK_SRC = "/bughyve-wordmark.jpeg";
 
 type Role = "client" | "tester";
 
@@ -167,13 +168,13 @@ export function WaitlistPage() {
               href="/"
             >
               <img
-                src={bughyveLogo}
+                src={BUGHYVE_LOGO_SRC}
                 alt="BugHyve"
                 className="h-10 w-auto sm:h-14"
                 decoding="async"
               />
               <img
-                src={bughyveWordmark}
+                src={BUGHYVE_WORDMARK_SRC}
                 alt="BugHyve"
                 className="w-auto h-3.5 ml-2"
                 decoding="async"
