@@ -1,12 +1,12 @@
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { AppProviders } from "@/lib/providers/AppProviders";
-import { HomePage } from "@/pages/HomePage";
+import { WaitlistPage } from "@/pages";
 
 export default function App() {
   return (
     <ErrorBoundary>
       <AppProviders>
-        <HomePage />
+        <WaitlistPage />
       </AppProviders>
     </ErrorBoundary>
   );
