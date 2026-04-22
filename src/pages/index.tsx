@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { BackgroundTexture } from "@/components/BackgroundTexture";
 import { getWaitlistUrl } from "@/lib/waitlistApi";
 import { cn } from "@/lib/utils/cn";
-import { Users } from "lucide-react";
+// import { Users } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { toast } from "sonner";
 
@@ -21,39 +21,39 @@ function successCopy(role: Role) {
     : "We'll reach out when the first tester campaigns go live.";
 }
 
-function WaitlistCountBanner({
-  client,
-  tester,
-}: {
-  client: number;
-  tester: number;
-}) {
-  const total = client + tester;
-  return (
-    <div
-      className={cn(
-        "mt-6 w-full max-w-2xl flex items-center justify-center gap-2.5 leading-snug text-muted-foreground sm:text-sm",
-      )}
-      aria-live="polite"
-    >
-      <Users
-        className="size-4 shrink-0 text-primary/75 sm:size-[18px]"
-        strokeWidth={2}
-        aria-hidden
-      />
-      {total === 0 ? (
-        <span>Be among the first on the waitlist.</span>
-      ) : (
-        <span>
-          <span className="font-semibold tabular-nums text-foreground">
-            {total.toLocaleString()}
-          </span>{" "}
-          {total === 1 ? "person has" : "people have"} joined the waitlist.
-        </span>
-      )}
-    </div>
-  );
-}
+// function WaitlistCountBanner({
+//   client,
+//   tester,
+// }: {
+//   client: number;
+//   tester: number;
+// }) {
+//   const total = client + tester;
+//   return (
+//     <div
+//       className={cn(
+//         "mt-6 w-full max-w-2xl flex items-center justify-center gap-2.5 leading-snug text-muted-foreground sm:text-sm",
+//       )}
+//       aria-live="polite"
+//     >
+//       <Users
+//         className="size-4 shrink-0 text-primary/75 sm:size-[18px]"
+//         strokeWidth={2}
+//         aria-hidden
+//       />
+//       {total === 0 ? (
+//         <span>Be among the first on the waitlist.</span>
+//       ) : (
+//         <span>
+//           <span className="font-semibold tabular-nums text-foreground">
+//             {total.toLocaleString()}
+//           </span>{" "}
+//           {total === 1 ? "person has" : "people have"} joined the waitlist.
+//         </span>
+//       )}
+//     </div>
+//   );
+// }
 
 export function WaitlistPage() {
   const [role, setRole] = useState<Role>("client");
@@ -61,7 +61,7 @@ export function WaitlistPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [alreadyWhitelisted, setAlreadyWhitelisted] = useState(false);
-  const [waitlistCounts, setWaitlistCounts] = useState<{
+  const [, setWaitlistCounts] = useState<{
     client: number;
     tester: number;
   } | null>(null);
@@ -397,12 +397,12 @@ export function WaitlistPage() {
               </div>
             )}
           </div>
-          {waitlistCounts !== null ? (
+          {/* {waitlistCounts !== null ? (
             <WaitlistCountBanner
               client={waitlistCounts.client}
               tester={waitlistCounts.tester}
             />
-          ) : null}
+          ) : null} */}
         </main>
 
         <footer className="border-t border-border px-6 py-5 text-center sm:px-12 sm:py-6">
