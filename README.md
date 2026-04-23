@@ -22,6 +22,8 @@ BugHyve is a QA marketplace where product teams can launch on-demand testing cam
 - Track earnings and submission task log.
 - Manage account information, availability, work preferences, and payment methods.
 
+<img width="1456" height="818" alt="image" src="https://github.com/user-attachments/assets/1ca7d5b8-6b7e-433b-b964-094acda64771" />
+
 ## Setup
 
 1. `pnpm install`
