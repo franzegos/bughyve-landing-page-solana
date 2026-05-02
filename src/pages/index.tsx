@@ -1,13 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { BackgroundTexture } from "@/components/BackgroundTexture";
+import { MarketingLayout } from "@/components/MarketingLayout";
 import { getWaitlistUrl } from "@/lib/waitlistApi";
 import { cn } from "@/lib/utils/cn";
 // import { Users } from "lucide-react";
-import { FaXTwitter } from "react-icons/fa6";
 import { toast } from "sonner";
-
-const BUGHYVE_LOGO_SRC = "/bughyve-logo-transparent.svg";
-const BUGHYVE_WORDMARK_SRC = "/bughyve-wordmark.jpeg";
 
 type Role = "client" | "tester";
 
@@ -153,46 +149,7 @@ export function WaitlistPage() {
   }, [submit, success, loading]);
 
   return (
-    <div
-      className={cn(
-        "relative isolate min-h-screen overflow-x-hidden",
-        "bg-background font-sans text-base leading-relaxed text-foreground antialiased",
-      )}
-    >
-      <BackgroundTexture />
-      <div className="relative z-2 grid min-h-screen grid-rows-[auto_1fr_auto]">
-        <header className="flex items-center justify-between border-b border-border px-6 py-4 sm:px-12 sm:py-2">
-          <div className="flex items-center gap-2">
-            <a
-              className="inline-flex shrink-0 items-center no-underline"
-              href="/"
-            >
-              <img
-                src={BUGHYVE_LOGO_SRC}
-                alt="BugHyve"
-                className="h-10 w-auto sm:h-14"
-                decoding="async"
-              />
-              <img
-                src={BUGHYVE_WORDMARK_SRC}
-                alt="BugHyve"
-                className="w-auto h-3.5 ml-2"
-                decoding="async"
-              />
-            </a>
-          </div>
-          <a
-            href="https://x.com/bughyve"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground transition-opacity hover:opacity-70"
-            aria-label="BugHyve on X"
-          >
-            <FaXTwitter className="size-6" strokeWidth={2} aria-hidden />
-          </a>
-        </header>
-
-        <main className="flex flex-col items-center justify-center px-6 py-16 text-center sm:py-20">
+    <MarketingLayout mainClassName="flex flex-col items-center justify-center px-6 py-16 text-center sm:py-20">
           <div
             className={cn(
               "mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-primary",
@@ -403,14 +360,6 @@ export function WaitlistPage() {
               tester={waitlistCounts.tester}
             />
           ) : null} */}
-        </main>
-
-        <footer className="border-t border-border px-6 py-5 text-center sm:px-12 sm:py-6">
-          <p className="text-xs text-muted-foreground">
-            © 2026 BugHyve. All Rights Reserved.
-          </p>
-        </footer>
-      </div>
-    </div>
+    </MarketingLayout>
   );
 }
